@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LicorLibrary</string>
+    <string name="Licor_Register">Licor Register</string>
+    <string name="Licor_Name">Licor name:</string>
+    <string name="TextView_Author">Author</string>
+    <string name="Liters_Capacity">Liters Capacity</string>
+    <string name="Licor_Description">Description</string>
+    <string name="Save_Licor">Save</string>
+</resources>
