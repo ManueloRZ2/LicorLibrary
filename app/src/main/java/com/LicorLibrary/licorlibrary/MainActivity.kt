@@ -1,16 +1,22 @@
 package com.LicorLibrary.licorlibrary
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.LicorLibrary.licorlibrary.databinding.ActivityMainBinding
 import org.w3c.dom.Text
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBinding : ActivityMainBinding
+    private var cal = Calendar.getInstance()
+    private var publicationDate = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +31,59 @@ class MainActivity : AppCompatActivity() {
         val SaveTextView : TextView = findViewById(R.id.TextViewButton)*/
 
 
-        mainBinding.ButtonSave.setOnClickListener{
-            val Information : String = mainBinding.textViewName.text.toString() + ", " + mainBinding.TextViewAuthor.text.toString() + ", " + mainBinding.TextInputCapacity.text.toString()
+        val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            cal.set(Calendar.YEAR, year)
+            cal.set(Calendar.MONTH, month)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            mainBinding.TextViewButton.text = Information
+            val format = "MM/dd/yyyy"
+            val simpleDateFormat = SimpleDateFormat(format, Locale.US)
+            publicationDate = simpleDateFormat.format(cal.time).toString()
+            mainBinding.buttonDate.text = publicationDate
+        }
+
+        with(mainBinding) {
+
+            buttonDate.setOnClickListener{
+                DatePickerDialog(
+                    this@MainActivity,
+                    dateSetListener,
+                    cal.get(Calendar.YEAR),
+                    cal.get(Calendar.MONTH),
+                    cal.get(Calendar.DAY_OF_MONTH)
+                ).show()
+            }
+            mainBinding.ButtonSave.setOnClickListener   {
+
+                if(TextViewAuthor.text.isEmpty() ||
+                    EditTextName.text.isEmpty() ||
+                    TextInputDescription.text?.isEmpty() == true ||
+                    TextInputCapacity.text?.isEmpty() == true){
+
+                    Toast.makeText(applicationContext, "Debe diligenciar todos los campos obligatorios", Toast.LENGTH_SHORT).show()
+
+                } else {
+                    val Author = TextViewAuthor.text.toString()
+                    val NameLicor = EditTextName.text.toString()
+                    val Capacity = TextInputCapacity.text.toString().toInt()
+                    val Description = TextInputDescription.text.toString()
+
+                    var typeLicor = ""
+
+                    if (checkBoxLicor.isChecked) typeLicor += "Licored"
+                    if (checkBoxNoLicor.isChecked) typeLicor += "Not licored"
+
+                    var Score = when {
+                        radioButtonOne.isChecked -> 1
+                        radioButtonTwo.isChecked -> 2
+                        else -> 3
+                    }
+
+
+                    TextViewButton.text = getString(R.string.Info, Author, NameLicor, Capacity, Description, typeLicor)
+                }
+
+            }
         }
     }
 }

@@ -6,4 +6,11 @@
     <string name="Liters_Capacity">Liters Capacity</string>
     <string name="Licor_Description">Description</string>
     <string name="Save_Licor">Save</string>
+    <string name="Info">Author: %s \n, Licor´s Name: %s \n, Capacity(Lts): %d \n, Description: %s \n, Type: %s</string>
+    <string name="Licor">Licor</string>
+    <string name="NotLicor">No licor</string>
+    <string name="NmberOne">1</string>
+    <string name="NumberTwo">2</string>
+    <string name="NumberThree">3</string>
+    <string name="Date">Fecha</string>
 </resources>
