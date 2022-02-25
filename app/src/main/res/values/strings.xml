@@ -18,4 +18,8 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="Licor_Tittle">Brandy</string>
     <string name="Author_Tittle">Emmanuel Arango</string>
+    <string name="title_activity_bottom">Bottom_Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
