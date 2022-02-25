@@ -13,4 +13,9 @@
     <string name="NumberTwo">2</string>
     <string name="NumberThree">3</string>
     <string name="Date">Fecha</string>
+    <string name="title_activity_splash_activuty">SplashActivuty</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Licor_Tittle">Brandy</string>
+    <string name="Author_Tittle">Emmanuel Arango</string>
 </resources>

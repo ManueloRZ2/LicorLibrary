@@ -1,14 +1,11 @@
-package com.LicorLibrary.licorlibrary
+package com.LicorLibrary.licorlibrary.ui.main
 
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import com.LicorLibrary.licorlibrary.R
 import com.LicorLibrary.licorlibrary.databinding.ActivityMainBinding
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val SaveButton : Button = findViewById(R.id.ButtonSave)
         val SaveTextView : TextView = findViewById(R.id.TextViewButton)*/
 
-
+        /*
         val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             cal.set(Calendar.YEAR, year)
             cal.set(Calendar.MONTH, month)
@@ -84,6 +81,32 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-        }
+
+        }*/
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume(){
+        super.onResume()
+    }
+
+    override fun onPause(){
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
     }
 }

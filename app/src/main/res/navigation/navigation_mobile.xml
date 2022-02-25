@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_mobile"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/newLicorFragment"
+        android:name="com.LicorLibrary.licorlibrary.ui.newlicor.NewLicorFragment"
+        android:label="NewLicorFragment"
+        tools:layout="@layout/fragment_new_licor">
+        <action
+            android:id="@+id/action_newLicorFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.LicorLibrary.licorlibrary.ui.list.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_newLicorFragment"
+            app:destination="@id/newLicorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.LicorLibrary.licorlibrary.ui.detalle.DetalleFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="licor"
+            app:argType="com.LicorLibrary.licorlibrary.models.Licor" />
+    </fragment>
+</navigation>
