@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/newLicorFragment"
         android:name="com.LicorLibrary.licorlibrary.ui.newlicor.NewLicorFragment"
-        android:label="NewLicorFragment"
+        android:label="@string/title_new"
         tools:layout="@layout/fragment_new_licor">
         <action
             android:id="@+id/action_newLicorFragment_to_detalleFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.LicorLibrary.licorlibrary.ui.list.ListFragment"
-        android:label="fragment_list"
+        android:label="@string/title_list"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_newLicorFragment"
@@ -35,11 +35,11 @@
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.LicorLibrary.licorlibrary.ui.update.UpdateFragment"
-        android:label="fragment_update"
+        android:label="@string/title_update"
         tools:layout="@layout/fragment_update" />
     <fragment
         android:id="@+id/deleteFragment"
         android:name="com.LicorLibrary.licorlibrary.ui.delete.DeleteFragment"
-        android:label="fragment_delete"
+        android:label="@string/title_delete"
         tools:layout="@layout/fragment_delete" />
 </navigation>
